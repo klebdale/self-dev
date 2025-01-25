@@ -1,0 +1,172 @@
+function onOpen() {
+  var ui = SpreadsheetApp.getUi();
+  ui.createMenu('Email Payslips')
+    .addItem('Select Employees', 'checkboxEmployees')
+    .addToUi();
+}
+
+
+function checkboxEmployees(){
+  //Get names of all sheets
+  //Have an array of excluded sheet names
+  //Display the remaining sheet names as checkbox UI
+  //Have the ability to check/uncheck the names
+  //Pass the checked names as an array to sendPayslips() upon clicking "Send Payslip"
+
+  // Get names of all sheets
+  const spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  const sheets = spreadsheet.getSheets();
+  const excludedSheets = [
+    'LABOR', 'SALARY', 'ENTRY LOG', 'BREAKAGE & SPOILAGE', 'Holidays',
+    '13TH MONTH', 'SSS', 'Philhealth', 'PAGIBIG', 'PENALTIES', 'Payroll Email Log'
+  ];
+
+  // Filter sheets to exclude certain names
+  var employeeNames = sheets
+    .map(sheet => sheet.getSheetName())
+    .filter(name => !excludedSheets.includes(name));
+
+  // Create a simple HTML form with checkboxes for the filtered sheet names
+  var html = `
+    <form id="checkboxForm">
+      <div>
+        <button type="button" onclick="checkAll(true)">Check All</button>
+        <button type="button" onclick="checkAll(false)">Uncheck All</button>
+      </div>
+      <br>
+  `;
+  employeeNames.forEach(name => {
+    html += `<label><input type="checkbox" name="sheets" value="${name}" checked>${name}</label><br>`;
+  });
+  html += `
+      <br>
+      <button onclick="google.script.run.processSelectedSheets(getSelectedSheets()); google.script.host.close();" type="button">
+        Send Payslip
+      </button>
+      <script>
+        function getSelectedSheets() {
+          const checkboxes = document.querySelectorAll('input[name="sheets"]:checked');
+          return Array.from(checkboxes).map(cb => cb.value);
+        }
+
+        function checkAll(isChecked) {
+          const checkboxes = document.querySelectorAll('input[name="sheets"]');
+          checkboxes.forEach(cb => cb.checked = isChecked);
+        }
+      </script>
+    </form>
+  `;
+
+  // Display the form in a dialog
+  var ui = HtmlService.createHtmlOutput(html)
+    .setWidth(400)
+    .setHeight(300);
+  SpreadsheetApp.getUi().showModalDialog(ui, 'Select Employees');
+}
+
+
+// Function to handle the selected sheets
+function processSelectedSheets(selectedSheets) {
+  if (!selectedSheets || selectedSheets.length === 0) {
+    SpreadsheetApp.getUi().alert('No employees selected.');
+    return;
+  }
+  
+  // Pass the selected sheets to the sendPayslips function
+  sendPayslips(selectedSheets);
+}
+
+
+function sendPayslips(employeeNames = null) {
+  const ui = SpreadsheetApp.getUi(); // Get the UI for showing dialog boxes
+  ui.alert('Processing', 'The email sending process has started. Press "OK" and please wait...', ui.ButtonSet.OK);
+
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var sheets = spreadsheet.getSheets();
+
+  sheets.forEach(function(sheet) {
+    if (employeeNames.includes(sheet.getSheetName())) {
+
+      var name = sheet.getRange('B3').getValue();
+      var email = sheet.getRange('B4').getValue();
+      var payPeriodStart = new Date(sheet.getRange('B5').getValue());
+      var payPeriodEnd = new Date(sheet.getRange('D5').getValue());
+      var paymentDate = new Date(sheet.getRange('B21').getValue());
+
+      var formattedPayPeriodStart = Utilities.formatDate(payPeriodStart, "GMT+8", 'MMM dd yyyy');
+      var formattedPayPeriodEnd = Utilities.formatDate(payPeriodEnd, "GMT+8", 'MMM dd yyyy');
+      var formattedPaymentDate = Utilities.formatDate(paymentDate, "GMT+8", 'MMM dd yyyy');
+
+      var subject = 'Your Payroll Slip for ' + formattedPaymentDate;
+
+      var message = "<p>Dear " + name + ",<br><br>I hope this email finds you well.<br><br>We are pleased to inform you that your payroll slip for " + formattedPayPeriodStart + " to " + formattedPayPeriodEnd + " has been generated.<br><br>Please review the attached payroll slip for a detailed breakdown. If you have any questions or notice any discrepancies, do not hesitate to reach out to the HR department.<br><br>Thank you for your continued hard work and dedication.<br><br>Best Regards,<br>House of Yang<br><br><i>Note: Please remember that your salary information is private and confidential</i>";
+      
+      var pdf = convertSheetToPDF(sheet);
+
+      if (email) {
+        try {
+          MailApp.sendEmail({
+            to: email,
+            subject: subject,
+            htmlBody: message,
+            attachments: [pdf]
+          });
+          Logger.log('Sent payslip to ' + email);
+          logEmail(sheet.getSheetName(), email, 'Success');
+        } catch (error) {
+          Logger.log('Failed to send payslip to ' + email + ': ' + error.message);
+          logEmail(sheet.getSheetName(), email, 'Failed: ' + error.message);
+        }
+
+        // Introduce a delay to avoid triggering rate limits
+        Utilities.sleep(5000); // 5 seconds delay
+        //var emailQuotaRemaining = MailApp.getRemainingDailyQuota();
+        //Logger.log("Remaining email quota: " + emailQuotaRemaining);
+      }
+    }
+  });
+  ui.alert('Done', 'The email sending process has completed successfully.', ui.ButtonSet.OK);
+}
+
+
+function logEmail(sheetName, email, status) {
+  var spreadsheet = SpreadsheetApp.getActiveSpreadsheet();
+  var logSheet = spreadsheet.getSheetByName('Payroll Email Log');
+
+  if (!logSheet) {
+    logSheet = spreadsheet.insertSheet('Payroll Email Log');
+    logSheet.appendRow(['Sheet Name', 'Email', 'Status', 'Date Sent']);
+  }
+
+  var dateSent = new Date();
+  var newRow = [sheetName, email, status, Utilities.formatDate(dateSent, "GMT+8", 'MMM dd yyyy HH:mm:ss')];
+  logSheet.insertRowBefore(2); // Insert a new row at position 2 (below the header)
+  logSheet.getRange(2, 1, 1, newRow.length).setValues([newRow]);
+}
+
+function convertSheetToPDF(sheet) {
+  var spreadsheet = sheet.getParent();
+  var sheetId = sheet.getSheetId();
+  var url = 'https://docs.google.com/spreadsheets/d/' + spreadsheet.getId() + '/export?';
+
+  var exportOptions = [
+    'format=pdf',
+    'size=letter',
+    'portrait=true',
+    'fitw=true',
+    'sheetnames=false',
+    'printtitle=false',
+    'pagenumbers=false',
+    'gridlines=false',
+    'fzr=false',
+    'gid=' + sheetId
+  ];
+
+  var params = {
+    method: 'GET',
+    headers: { 'Authorization': 'Bearer ' + ScriptApp.getOAuthToken() }
+  };
+
+  var response = UrlFetchApp.fetch(url + exportOptions.join('&'), params);
+  return response.getBlob().setName(sheet.getName() + '.pdf');
+}
