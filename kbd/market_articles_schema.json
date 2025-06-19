@@ -1,6 +1,7 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
   "type": "array",
+  "minItems": 5,
   "items": {
     "type": "object",
     "properties": {
@@ -22,8 +23,7 @@
         "type": "string"
       },
       "article_summary": {
-        "type": "string",
-        "description": "A brief synopsis or summary of the article’s key points and takeaways."
+        "type": "string"
       },
       "credibility_score": {
         "type": "number",
