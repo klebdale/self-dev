@@ -1,39 +1,43 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "article_title": {
-      "type": "string"
-    },
-    "publisher": {
-      "type": "string"
-    },
-    "date_published": {
-      "type": "string",
-      "format": "date"
-    },
-    "url": {
-      "type": "string",
-      "format": "uri"
-    },
-    "author": {
-      "type": "string"
-    },
-    "article_summary": {
-      "type": "string"
-    },
-    "keywords": {
-      "type": "array",
-      "items": {
+  "type": "array",
+  "minItems": 5,
+  "items": {
+    "type": "object",
+    "properties": {
+      "article_title": {
         "type": "string"
       },
-      "description": "Key topics or keywords covered in the article."
-    }
-  },
-  "required": [
-    "article_title",
-    "publisher",
-    "date_published",
-    "url"
-  ]
+      "publisher": {
+        "type": "string"
+      },
+      "date_published": {
+        "type": "string",
+        "format": "date"
+      },
+      "url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "author": {
+        "type": "string"
+      },
+      "article_summary": {
+        "type": "string"
+      },
+      "keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Key topics or keywords covered in the article."
+      }
+    },
+    "required": [
+      "article_title",
+      "publisher",
+      "date_published",
+      "url"
+    ]
+  }
 }
