@@ -1,51 +1,61 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "array",
-  "minItems": 5,
-  "items": {
-    "type": "object",
-    "properties": {
-      "article_title": {
-        "type": "string"
-      },
-      "publisher": {
-        "type": "string"
-      },
-      "date_published": {
-        "type": "string",
-        "format": "date"
-      },
-      "url": {
-        "type": "string",
-      },
-      "author": {
-        "type": "string"
-      },
-      "article_summary": {
-        "type": "string"
-      },
-      "credibility_score": {
-        "type": "number",
-        "description": "A score representing the credibility of the article based on the publisher and the source."
-      },
-      "content_type": {
-        "type": "string",
-        "enum": ["news", "case study", "interview", "opinion", "report", "analysis"],
-        "description": "The specific type of content the article represents."
-      },
-      "keywords": {
-        "type": "array",
-        "items": {
-          "type": "string"
-        },
-        "description": "Key topics or keywords covered in the article."
-      }
+  "type": "object",
+  "properties": {
+    "article_title": {
+      "type": "string"
     },
-    "required": [
-      "article_title",
-      "publisher",
-      "date_published",
-      "url"
-    ]
-  }
+    "publisher": {
+      "type": "string"
+    },
+    "date_published": {
+      "type": "string",
+      "format": "date"
+    },
+    "url": {
+      "type": "string",
+      "format": "uri"
+    },
+    "author": {
+      "type": "string"
+    },
+    "article_summary": {
+      "type": "string"
+    },
+    "credibility_score": {
+      "type": "number",
+      "description": "A score representing the credibility of the article based on the publisher and the source."
+    },
+    "source_type": {
+      "type": "string",
+      "enum": ["news", "research", "social media", "blog", "opinion"]
+    },
+    "content_type": {
+      "type": "string",
+      "enum": ["news", "case study", "interview", "opinion", "report", "analysis"],
+      "description": "The specific type of content the article represents."
+    },
+    "sentiment_score": {
+      "type": "string",
+      "enum": ["positive", "neutral", "negative"],
+      "description": "The sentiment tone of the article's content."
+    },
+    "keywords": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Key topics or keywords covered in the article."
+    },
+    "article_impact_score": {
+      "type": "number",
+      "description": "A score indicating how impactful or relevant the article is to the client’s business or strategy (1-5 scale)."
+    }
+  },
+  "required": [
+    "article_title",
+    "publisher",
+    "date_published",
+    "url"
+  ]
 }
