@@ -1,58 +1,98 @@
 {
   "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "article_title": {
-      "type": "string"
-    },
-    "publisher": {
-      "type": "string"
-    },
-    "date_published": {
-      "type": "string",
-      "format": "date"
-    },
-    "url": {
-      "type": "string",
-      "format": "uri"
-    },
-    "author": {
-      "type": "string"
-    },
-    "article_summary": {
-      "type": "string",
-       "description": "A brief synopsis or summary of the article’s key points and takeaways."
-    },
-    "credibility_score": {
-      "type": "number",
-      "description": "A score representing the credibility of the article based on the publisher and the source."
-    },
-    "source_type": {
-      "type": "string",
-      "enum": ["news", "research", "social media", "blog", "opinion"]
-    },
-    "sentiment_score": {
-      "type": "string",
-      "enum": ["positive", "neutral", "negative"],
-      "description": "The sentiment tone of the article's content."
-    },
-    "keywords": {
-      "type": "array",
-      "items": {
+  "type": "array",
+  "items": {
+    "type": "object",
+    "properties": {
+      "article_title": {
         "type": "string"
       },
-      "description": "Key topics or keywords covered in the article."
+      "publisher": {
+        "type": "string"
+      },
+      "date_published": {
+        "type": "string",
+        "format": "date"
+      },
+      "url": {
+        "type": "string",
+        "format": "uri"
+      },
+      "author": {
+        "type": "string"
+      },
+      "article_summary": {
+        "type": "string"
+      },
+      "credibility_score": {
+        "type": "number",
+        "description": "A score representing the credibility of the article based on the publisher and the source."
+      },
+      "source_type": {
+        "type": "string",
+        "enum": ["news", "research", "social media", "blog", "opinion"]
+      },
+      "short_synopsis": {
+        "type": "string",
+        "description": "A brief synopsis or summary of the article’s key points and takeaways."
+      },
+      "sentiment_score": {
+        "type": "string",
+        "enum": ["positive", "neutral", "negative"],
+        "description": "The sentiment tone of the article's content."
+      },
+      "keywords": {
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "description": "Key topics or keywords covered in the article."
+      },
+      "article_impact_score": {
+        "type": "number",
+        "description": "A score indicating how impactful or relevant the article is to the client’s business or strategy (1-5 scale)."
+      },
+      "content_type": {
+        "type": "string",
+        "enum": ["news", "case study", "interview", "opinion", "report", "analysis"],
+        "description": "The specific type of content the article represents."
+      },
+      "geographic_relevance": {
+        "type": "string",
+        "enum": ["local", "regional", "global"],
+        "description": "The geographic relevance of the article (e.g., local to Australia, regional to Asia, or global)."
+      },
+      "related_links": {
+        "type": "array",
+        "items": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": "Links to other related articles or resources that complement this article."
+      },
+      "social_media_mentions": {
+        "type": "object",
+        "properties": {
+          "mentions_count": {
+            "type": "integer",
+            "description": "Number of times the article has been mentioned on social media."
+          },
+          "platforms": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "List of social media platforms where the article has been mentioned."
+          }
+        },
+        "description": "Information about social media engagement with the article."
+      }
     },
-    "content_type": {
-      "type": "string",
-      "enum": ["news", "case study", "interview", "opinion", "report", "analysis"],
-      "description": "The specific type of content the article represents."
-    },
-  },
-  "required": [
-    "article_title",
-    "publisher",
-    "date_published",
-    "url"
-  ]
+    "required": [
+      "article_title",
+      "publisher",
+      "date_published",
+      "url"
+    ]
+  }
 }
