@@ -11,7 +11,16 @@
     "brand_values": {
       "type": "array",
       "items": {
-        "type": "string"
+        "type": "object",
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        },
+        "required": ["value", "description"]
       }
     },
     "about_business": {
