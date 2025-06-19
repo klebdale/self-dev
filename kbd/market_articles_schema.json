@@ -1,43 +1,63 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "array",
-  "minItems": 5,
-  "items": {
+  "name": "market_articles",
+  "schema": {
     "type": "object",
     "properties": {
-      "article_title": {
-        "type": "string"
-      },
-      "publisher": {
-        "type": "string"
-      },
-      "date_published": {
-        "type": "string",
-        "format": "date"
-      },
-      "url": {
-        "type": "string",
-        "format": "uri"
-      },
-      "author": {
-        "type": "string"
-      },
-      "article_summary": {
-        "type": "string"
-      },
-      "keywords": {
+      "articles": {
         "type": "array",
+        "description": "A collection of market articles.",
         "items": {
-          "type": "string"
-        },
-        "description": "Key topics or keywords covered in the article."
+          "type": "object",
+          "properties": {
+            "title": {
+              "type": "string",
+              "description": "The title of the article."
+            },
+            "date": {
+              "type": "string",
+              "description": "The date the article was published.",
+              "format": "date"
+            },
+            "author": {
+              "type": "string",
+              "description": "The author of the article."
+            },
+            "publisher": {
+              "type": "string",
+              "description": "The publisher of the article."
+            }
+             "url": {
+              "type": "string",
+              "description": "link of the article"
+            },
+            "summary": {
+              "type": "string",
+              "description": "a synopsis of the article."
+            },
+            "keywords": {
+              "type": "array",
+              "description": "Keywords related to the article.",
+              "items": {
+                "type": "string"
+              }
+            }
+          },
+          "required": [
+            "title",
+            "author",
+            "date",
+            "publisher",
+            "keywords"
+          ],
+          "additionalProperties": false
+        }
       }
     },
     "required": [
-      "article_title",
-      "publisher",
-      "date_published",
-      "url"
-    ]
-  }
+      "articles"
+    ],
+    "additionalProperties": false,
+    "minItems": 5
+  },
+  "strict": true
 }
