@@ -18,7 +18,8 @@
             "description": "One or two words followed by a short phrase separated by ":""
           },
         },
-      }
+      },
+      "minItems": 3
     },
     "about_business": {
       "type": "string"
