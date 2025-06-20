@@ -15,9 +15,9 @@
         "properties": {
           "value": {
             "type": "string",
-            "description": "One or two words followed by a short phrase separated by ":""
-          },
-        },
+            "description": "One or two words followed by a short phrase separated by a colon :"
+          }
+        }
       },
       "minItems": 3
     },
