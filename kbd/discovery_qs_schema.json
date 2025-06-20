@@ -19,7 +19,7 @@
           }
         }
       },
-      "minItems": 3
+      "minItems": 4
     },
     "about_business": {
       "type": "string"
