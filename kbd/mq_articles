@@ -1,0 +1,59 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "articles": {
+            "type": "array",
+            "description": "atleast 5 relevant market articles concerning the brand/client.",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "title": {
+                        "type": "string",
+                        "description": "The title of the article."
+                    },
+                    "date": {
+                        "type": "string",
+                        "description": "The date the article was published.",
+                        "format": "date"
+                    },
+                    "author": {
+                        "type": "string",
+                        "description": "The author of the article."
+                    },
+                    "publisher": {
+                        "type": "string",
+                        "description": "The publisher of the article."
+                    },
+                    "url": {
+                        "type": "string",
+                        "description": "link of the article"
+                    },
+                    "summary": {
+                        "type": "string",
+                        "description": "a synopsis of the article."
+                    },
+                    "keywords": {
+                        "type": "array",
+                        "description": "Keywords related to the article.",
+                        "items": {
+                            "type": "string"
+                        }
+                    }
+                },
+                "required": [
+                    "title",
+                    "author",
+                    "date",
+                    "publisher",
+                    "keywords"
+                ],
+                "additionalProperties": false
+            }
+        }
+    },
+    "required": [
+        "articles"
+    ],
+    "additionalProperties": false
+}
