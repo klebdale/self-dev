@@ -1,149 +1,149 @@
 {
-  "$schema": "http://json-schema.org/draft-07/schema#",
-  "type": "object",
-  "properties": {
-    "brand_name": {
-      "type": "string"
-    },
-    "brand_mission": {
-      "type": "string"
-    },
-    "brand_values": {
-      "type": "array",
-      "items": {
-        "type": "object",
-        "properties": {
-          "value": {
-            "type": "string",
-            "description": "Create 4 brand values with One or two words followed by a short phrase separated by a colon :"
-          }
-        }
-      },
-    },
-    "about_business": {
-      "type": "string"
-    },
-    "reason_for_engagement": {
-      "type": "string"
-    },
-    "main_business_goals": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "marketing_objectives": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "organic_social_media_objective": {
-      "type": "string"
-    },
-    "paid_social_media_objective": {
-      "type": "string"
-    },
-    "unique_competitive_advantage": {
-      "type": "string"
-    },
-    "product_description": {
-      "type": "string"
-    },
-    "ideal_customers": {
-      "type": "object",
-      "properties": {
-        "profile": {
-          "type": "string"
-        },
-        "values": {
-          "type": "array",
-          "items": {
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "brand_name": {
             "type": "string"
-          }
+        },
+        "brand_mission": {
+            "type": "string"
+        },
+        "brand_values": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "value": {
+                        "type": "string",
+                        "description": "Create 4 brand values with One or two words followed by a short phrase separated by a colon :"
+                    }
+                }
+            }
+        },
+        "about_business": {
+            "type": "string"
+        },
+        "reason_for_engagement": {
+            "type": "string"
+        },
+        "main_business_goals": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "marketing_objectives": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "organic_social_media_objective": {
+            "type": "string"
+        },
+        "paid_social_media_objective": {
+            "type": "string"
+        },
+        "unique_competitive_advantage": {
+            "type": "string"
+        },
+        "product_description": {
+            "type": "string"
+        },
+        "ideal_customers": {
+            "type": "object",
+            "properties": {
+                "profile": {
+                    "type": "string"
+                },
+                "values": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            }
+        },
+        "current_key_messages": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "content_strategies_tried": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "top_performing_content": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "paid_ads_performance": {
+            "type": "string"
+        },
+        "in_house_content_creation": {
+            "type": "string"
+        },
+        "ideal_monthly_budget": {
+            "type": "number"
+        },
+        "audience_personas": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "metrics_and_benchmarks": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        },
+        "objectives_and_expectations": {
+            "type": "string"
+        },
+        "strategist_questions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Create 3 open-ended, natural-sounding questions focusing on brand purpose, market fit, differentiation, business goals, competitive advantage, and measurable business outcomes."
+        },
+        "creative_director_questions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Create 3 open-ended, natural-sounding questions focusing on brand tone, visual identity, creative risks, inspiration, and expression."
+        },
+        "content_creator_questions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Create 3 open-ended, natural-sounding questions focusing on online presence, platform preferences, content style, content formats, and audience engagement."
+        },
+        "market_researcher_questions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Create 3 open-ended, natural-sounding questions focusing on market trends, competitor benchmarking, consumer insights, industry shifts, emerging opportunities and threats, data-driven audience behaviour, sentiment analysis, and validating assumptions with credible external sources."
         }
-      }
     },
-    "current_key_messages": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "content_strategies_tried": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "top_performing_content": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "paid_ads_performance": {
-      "type": "string"
-    },
-    "in_house_content_creation": {
-      "type": "string"
-    },
-    "ideal_monthly_budget": {
-      "type": "number"
-    },
-    "audience_personas": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "metrics_and_benchmarks": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      }
-    },
-    "objectives_and_expectations": {
-      "type": "string"
-    },
-    "strategist_questions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "Create 3 open-ended, natural-sounding questions focusing on brand purpose, market fit, differentiation, business goals, competitive advantage, and measurable business outcomes."
-    },
-    "creative_director_questions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "Create 3 open-ended, natural-sounding questions focusing on brand tone, visual identity, creative risks, inspiration, and expression."
-    },
-    "content_creator_questions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "Create 3 open-ended, natural-sounding questions focusing on online presence, platform preferences, content style, content formats, and audience engagement."
-    },
-    "market_researcher_questions": {
-      "type": "array",
-      "items": {
-        "type": "string"
-      },
-      "description": "Create 3 open-ended, natural-sounding questions focusing on market trends, competitor benchmarking, consumer insights, industry shifts, emerging opportunities and threats, data-driven audience behaviour, sentiment analysis, and validating assumptions with credible external sources."
-    }
-  },
-  "required": [
-    "brand_name",
-    "brand_mission",
-    "reason_for_engagement",
-    "main_business_goals",
-    "marketing_objectives",
-    "strategist_questions",
-    "creative_director_questions",
-    "content_creator_questions",
-    "market_researcher_questions"
-  ]
+    "required": [
+        "brand_name",
+        "brand_mission",
+        "reason_for_engagement",
+        "main_business_goals",
+        "marketing_objectives",
+        "strategist_questions",
+        "creative_director_questions",
+        "content_creator_questions",
+        "market_researcher_questions"
+    ]
 }
