@@ -57,7 +57,7 @@
       "articles"
     ],
     "additionalProperties": false,
-    "minItems": 5
+    "minItems": 3
   },
   "strict": true
 }
