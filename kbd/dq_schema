@@ -5,6 +5,10 @@
         "brand_name": {
             "type": "string"
         },
+        "first_name": {
+            "type": "string",
+            "description": "First name of the person who submitted the welcome response form"
+        },
         "brand_mission": {
             "type": "string"
         },
@@ -19,13 +23,15 @@
             "type": "string"
         },
         "reason_for_engagement": {
-            "type": "string"
+            "type": "string",
+            "description": "What is your main reason for engaging with Kill Boring Dead?"
         },
         "main_business_goals": {
             "type": "array",
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "What is your main business goals for the year? (not directly related to social media)"
         },
         "marketing_objectives": {
             "type": "array",
@@ -55,15 +61,47 @@
                     "type": "array",
                     "items": {
                         "type": "string"
-                    }
+                    },
+                    "description": "Provide 5 ideal customer values that would best fit the brand/client"
                 }
             }
+        },
+        "favourite_brands_on_social": {
+            "type": "string",
+            "description": "What are your favourite brands on social media right now? Just show the name and then followed by a URL. Separate them with space and pipe |"
+        },
+        "competitor": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "Fetch the 5 listed competitors by the client on the welcome response form. If they answered less than 5, leave the others blank"
+            }
+        },
+        "brands_socials": {
+            "type": "array",
+            "items": {
+                "type": "string",
+                "description": "Fetch the listed socials by the client on the welcome response form."
+            }
+        },
+        "tone_of_voice_role_summary": {
+            "type": "string",
+            "description": "Analyse the brand/client's tone of voice and provide a 2-3 sentence summary and then provide a fitting role title along a simple explanation that relates to the brand"
+        },
+        "brand_person": {
+            "type": "string",
+            "description": "Fetch from the welcome form response about the brand/client's answer on If your brand was a person, who might they be? along with their explanation. If they answered more than one, show all"
+        },
+        "brand_words_description": {
+            "type": "string",
+            "description": "Fetch from the welcome form response the answer for the question: What words would you use to describe your brand?. separate them with comma"
         },
         "current_key_messages": {
             "type": "array",
             "items": {
                 "type": "string"
-            }
+            },
+            "description": "Gather and provide 3 current key messages that the brand uses to articulate the WHY of their brand? Do you think these work, or need revision?"
         },
         "content_strategies_tried": {
             "type": "array",
@@ -87,10 +125,53 @@
             "type": "number"
         },
         "audience_personas": {
-            "type": "array",
-            "items": {
-                "type": "string"
-            }
+            "type": "object",
+            "properties": {
+                "persona_title": {
+                    "type": "string"
+                },
+                "persona_hypothetical_name": {
+                    "type": "string"
+                },
+                "persona_hypothetical_income_per_year": {
+                    "type": "string"
+                },
+                "persona_hypothetical_age": {
+                    "type": "number"
+                },
+                "persona_hypothetical_occupation": {
+                    "type": "string"
+                },
+                "persona_hypothetical_address": {
+                    "type": "string",
+                    "description": "Give this persona a hypothetical place where they live (preferable same region/country of the brand). Be descriptive with what type of household they are in"
+                },
+                "persona_mindset": {
+                    "type": "string",
+                    "description": "Give a detailed description as to how this persona operates. go beyond basic demographics like age and location, delving into motivations, behaviors, pain points, and goals. Make it so that people can empathize to their needs and desires and their preferences. Include details that are mundane yet relatable as the audience propagator of the brand. "
+                },
+                "persona_lifestyle": {
+                    "type": "string",
+                    "description": "Describe the persona's weekend activities and/or lifestyle"
+                },
+                "persona_spending": {
+                    "type": "string",
+                    "description": "Describe the persona's spend their money and their favourite brands"
+                },
+                "persona_brand_connection": {
+                    "type": "string",
+                    "description": "Describe why the persona loves and connects with the brand"
+                },
+                "persona_brand_products": {
+                    "type": "string",
+                    "description": "Describe what products of the brand does the persona buy/use"
+                },
+                "persona_channels": {
+                    "type": "string",
+                    "description": "List the primary social media channels that this persona would be best to connect with"
+                }
+            },
+            "description": "Provide 3 personas. Personas help us understand your customers (and prospective customers) better. This makes it easier for you to tailor your content, messaging, product development, and services to the specific needs, behaviors, and concerns of different groups."
         },
         "metrics_and_benchmarks": {
             "type": "array",
