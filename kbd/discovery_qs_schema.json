@@ -14,13 +14,10 @@
         "type": "object",
         "properties": {
           "value": {
-            "type": "string"
+            "type": "string",
+            "description": "One or two words followed by a short phrase separated by ":""
           },
-          "description": {
-            "type": "string"
-          }
         },
-        "required": ["value", "description"]
       }
     },
     "about_business": {
