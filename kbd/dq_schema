@@ -31,7 +31,7 @@
             "items": {
                 "type": "string"
             },
-            "description": "What is your main business goals for the year? (not directly related to social media)"
+            "description": "Provide strictly 3 main business goals of the brand/client for the year (not directly related to social media)"
         },
         "marketing_objectives": {
             "type": "array",
@@ -46,7 +46,12 @@
             "type": "string"
         },
         "unique_competitive_advantage": {
-            "type": "string"
+            "type": "string",
+            "description": "Tell us about the brand's unique competitive advantage and proof points that support your claims"
+        },
+        "defining_attributes": {
+            "type": "string",
+            "description": "List 5 defining attributes and core benefits that the brand has"
         },
         "product_description": {
             "type": "string"
@@ -172,6 +177,10 @@
                     "persona_channels": {
                         "type": "string",
                         "description": "List the primary social media channels that this persona would be best to connect with"
+                    },
+                    "persona_summary": {
+                        "type": "string",
+                        "description": "Provide 3-5 sentence summary of this persona based on the listed traits above"
                     }
                 }
             }
