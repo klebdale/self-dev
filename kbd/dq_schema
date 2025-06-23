@@ -51,6 +51,9 @@
         },
         "defining_attributes": {
             "type": "array",
+            "items": {
+                "type": "string"
+            },
             "description": "List 5 defining attributes and core benefits that the brand has"
         },
         "product_description": {
