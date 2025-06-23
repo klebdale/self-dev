@@ -50,7 +50,7 @@
             "description": "Tell us about the brand's unique competitive advantage and proof points that support your claims"
         },
         "defining_attributes": {
-            "type": "string",
+            "type": "array",
             "description": "List 5 defining attributes and core benefits that the brand has"
         },
         "product_description": {
