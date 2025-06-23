@@ -1,0 +1,40 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "strategist_questions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Create 3 open-ended, natural-sounding, Probing, Reflective, Provocative, Insight-Driven Question focusing on brand purpose, market fit, differentiation, business goals, competitive advantage, and measurable business outcomes. Provocative, Insight-Driven Questions: Frame questions in a way that challenges the client’s current assumptions and encourages them to reflect deeply on their brand’s positioning. Don’t just ask ‘what’—ask ‘how’ and ‘why’ with a focus on the ‘big picture’ and long-term outcomes. Tactical Exploration: Move beyond basic questions like “what are your goals?” or “what is your target audience?” and focus on how specific actions or strategies could impact their results. Use real-world examples or competitor benchmarks to make these questions feel relevant and grounded in real data."
+        },
+        "creative_director_questions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Create 3 open-ended, natural-sounding, Probing, Reflective, Provocative, Insight-Driven Question focusing on brand tone, visual identity, creative risks, inspiration, and expression. Provocative, Insight-Driven Questions: Frame questions in a way that challenges the client’s current assumptions and encourages them to reflect deeply on their brand’s positioning. Don’t just ask ‘what’—ask ‘how’ and ‘why’ with a focus on the ‘big picture’ and long-term outcomes. Tactical Exploration: Move beyond basic questions like “what are your goals?” or “what is your target audience?” and focus on how specific actions or strategies could impact their results. Use real-world examples or competitor benchmarks to make these questions feel relevant and grounded in real data."
+        },
+        "content_creator_questions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Create 3 open-ended, natural-sounding, Probing, Reflective, Provocative, Insight-Driven Question focusing on online presence, platform preferences, content style, content formats, and audience engagement. Provocative, Insight-Driven Questions: Frame questions in a way that challenges the client’s current assumptions and encourages them to reflect deeply on their brand’s positioning. Don’t just ask ‘what’—ask ‘how’ and ‘why’ with a focus on the ‘big picture’ and long-term outcomes. Tactical Exploration: Move beyond basic questions like “what are your goals?” or “what is your target audience?” and focus on how specific actions or strategies could impact their results. Use real-world examples or competitor benchmarks to make these questions feel relevant and grounded in real data."
+        },
+        "market_researcher_questions": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            },
+            "description": "Create 3 open-ended, natural-sounding, Probing, Reflective, Provocative, Insight-Driven Question focusing on market trends, competitor benchmarking, consumer insights, industry shifts, emerging opportunities and threats, data-driven audience behaviour, sentiment analysis, and validating assumptions with credible external sources. Provocative, Insight-Driven Questions: Frame questions in a way that challenges the client’s current assumptions and encourages them to reflect deeply on their brand’s positioning. Don’t just ask ‘what’—ask ‘how’ and ‘why’ with a focus on the ‘big picture’ and long-term outcomes. Tactical Exploration: Move beyond basic questions like “what are your goals?” or “what is your target audience?” and focus on how specific actions or strategies could impact their results. Use real-world examples or competitor benchmarks to make these questions feel relevant and grounded in real data."
+        }
+    },
+    "required": [
+        "strategist_questions",
+        "creative_director_questions",
+        "content_creator_questions",
+        "market_researcher_questions"
+    ]
+}
