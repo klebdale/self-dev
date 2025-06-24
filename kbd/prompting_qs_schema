@@ -19,7 +19,14 @@
                     "follow-up_question_to_client": {
                         "type": "string"
                     }
-                }
+                },
+                "required": [
+                    "initial_assumption",
+                    "initial_question",
+                    "initial_question_answer",
+                    "follow-up_question_to_client"
+                ],
+                "additionalProperties": false
             }
         },
         "creative_director_questions": {
@@ -39,7 +46,14 @@
                     "follow-up_question_to_client": {
                         "type": "string"
                     }
-                }
+                },
+                "required": [
+                    "initial_assumption",
+                    "initial_question",
+                    "initial_question_answer",
+                    "follow-up_question_to_client"
+                ],
+                "additionalProperties": false
             }
         },
         "content_creator_questions": {
@@ -59,7 +73,14 @@
                     "follow-up_question_to_client": {
                         "type": "string"
                     }
-                }
+                },
+                "required": [
+                    "initial_assumption",
+                    "initial_question",
+                    "initial_question_answer",
+                    "follow-up_question_to_client"
+                ],
+                "additionalProperties": false
             }
         },
         "market_researcher_questions": {
@@ -79,7 +100,14 @@
                     "follow-up_question_to_client": {
                         "type": "string"
                     }
-                }
+                },
+                "required": [
+                    "initial_assumption",
+                    "initial_question",
+                    "initial_question_answer",
+                    "follow-up_question_to_client"
+                ],
+                "additionalProperties": false
             }
         }
     },
