@@ -88,5 +88,6 @@
         "creative_director_questions",
         "content_creator_questions",
         "market_researcher_questions"
-    ]
+    ],
+    "additionalProperties": false
 }
