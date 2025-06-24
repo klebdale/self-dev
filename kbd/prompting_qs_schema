@@ -8,16 +8,16 @@
                 "type": "object",
                 "properties": {
                     "initial assumption": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "initial question": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "initial question answer": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "follow-up question to client": {
-                        "type": "string",
+                        "type": "string"
                     }
                 }
             }
@@ -28,16 +28,16 @@
                 "type": "object",
                 "properties": {
                     "initial assumption": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "initial question": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "initial question answer": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "follow-up question to client": {
-                        "type": "string",
+                        "type": "string"
                     }
                 }
             }
@@ -48,16 +48,16 @@
                 "type": "object",
                 "properties": {
                     "initial assumption": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "initial question": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "initial question answer": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "follow-up question to client": {
-                        "type": "string",
+                        "type": "string"
                     }
                 }
             }
@@ -68,16 +68,16 @@
                 "type": "object",
                 "properties": {
                     "initial assumption": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "initial question": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "initial question answer": {
-                        "type": "string",
+                        "type": "string"
                     },
                     "follow-up question to client": {
-                        "type": "string",
+                        "type": "string"
                     }
                 }
             }
