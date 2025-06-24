@@ -5,25 +5,81 @@
         "strategist_questions": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                    "initial assumption": {
+                        "type": "string",
+                    },
+                    "initial question": {
+                        "type": "string",
+                    },
+                    "initial question answer": {
+                        "type": "string",
+                    },
+                    "follow-up question to client": {
+                        "type": "string",
+                    }
+                }
             }
         },
         "creative_director_questions": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                    "initial assumption": {
+                        "type": "string",
+                    },
+                    "initial question": {
+                        "type": "string",
+                    },
+                    "initial question answer": {
+                        "type": "string",
+                    },
+                    "follow-up question to client": {
+                        "type": "string",
+                    }
+                }
             }
         },
         "content_creator_questions": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                    "initial assumption": {
+                        "type": "string",
+                    },
+                    "initial question": {
+                        "type": "string",
+                    },
+                    "initial question answer": {
+                        "type": "string",
+                    },
+                    "follow-up question to client": {
+                        "type": "string",
+                    }
+                }
             }
         },
         "market_researcher_questions": {
             "type": "array",
             "items": {
-                "type": "string"
+                "type": "object",
+                "properties": {
+                    "initial assumption": {
+                        "type": "string",
+                    },
+                    "initial question": {
+                        "type": "string",
+                    },
+                    "initial question answer": {
+                        "type": "string",
+                    },
+                    "follow-up question to client": {
+                        "type": "string",
+                    }
+                }
             }
         }
     },
