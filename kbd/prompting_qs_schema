@@ -7,16 +7,16 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "initial assumption": {
+                    "initial_assumption": {
                         "type": "string"
                     },
-                    "initial question": {
+                    "initial_question": {
                         "type": "string"
                     },
-                    "initial question answer": {
+                    "initial_question_answer": {
                         "type": "string"
                     },
-                    "follow-up question to client": {
+                    "follow-up_question_to_client": {
                         "type": "string"
                     }
                 }
@@ -27,16 +27,16 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "initial assumption": {
+                    "initial_assumption": {
                         "type": "string"
                     },
-                    "initial question": {
+                    "initial_question": {
                         "type": "string"
                     },
-                    "initial question answer": {
+                    "initial_question_answer": {
                         "type": "string"
                     },
-                    "follow-up question to client": {
+                    "follow-up_question_to_client": {
                         "type": "string"
                     }
                 }
@@ -47,16 +47,16 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "initial assumption": {
+                    "initial_assumption": {
                         "type": "string"
                     },
-                    "initial question": {
+                    "initial_question": {
                         "type": "string"
                     },
-                    "initial question answer": {
+                    "initial_question_answer": {
                         "type": "string"
                     },
-                    "follow-up question to client": {
+                    "follow-up_question_to_client": {
                         "type": "string"
                     }
                 }
@@ -67,16 +67,16 @@
             "items": {
                 "type": "object",
                 "properties": {
-                    "initial assumption": {
+                    "initial_assumption": {
                         "type": "string"
                     },
-                    "initial question": {
+                    "initial_question": {
                         "type": "string"
                     },
-                    "initial question answer": {
+                    "initial_question_answer": {
                         "type": "string"
                     },
-                    "follow-up question to client": {
+                    "follow-up_question_to_client": {
                         "type": "string"
                     }
                 }
