@@ -54,7 +54,7 @@
             "items": {
                 "type": "string"
             },
-            "description": "List 5 defining attributes and core benefits that the brand has"
+            "description": "List 5 defining attributes and core benefits that the brand has in long phrase form"
         },
         "product_description": {
             "type": "string"
@@ -94,11 +94,11 @@
         },
         "tone_of_voice_role_summary": {
             "type": "string",
-            "description": "Analyse the brand/client's tone of voice and provide a 2-3 sentence summary and then provide a fitting role title along a simple explanation that relates to the brand"
+            "description": "Provide a 2-3 sentence summary and then provide a fitting role title along a simple explanation why this role relates to the brand"
         },
         "brand_person": {
             "type": "string",
-            "description": "Fetch from the welcome form response about the brand/client's answer on If your brand was a person, who might they be? along with their explanation. If they answered more than one, show all"
+            "description": "Fetch from the welcome form response about the brand/client's answer on 'If your brand was a person, who might they be?' along with their explanation. If they answered more than one, show all"
         },
         "brand_words_description": {
             "type": "string",
