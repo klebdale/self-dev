@@ -82,14 +82,14 @@
             "type": "array",
             "items": {
                 "type": "string",
-                "description": "Fetch the 5 listed competitors by the client on the welcome response form. If they answered less than 5, leave the others blank"
+                "description": "Fetch the 5 listed competitors by the client on the welcome response form. If they answered less than 5, put N/A"
             }
         },
         "brands_socials": {
             "type": "array",
             "items": {
                 "type": "string",
-                "description": "Fetch the listed socials by the client on the welcome response form."
+                "description": "Fetch the listed socials with URL of the client on the welcome response form."
             }
         },
         "tone_of_voice_role_summary": {
