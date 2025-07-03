@@ -1,0 +1,58 @@
+{
+  "type": "object",
+  "properties": {
+    "task_title": {
+      "type": "string",
+      "description": "A concise title that summarizes the task."
+    },
+    "task_description": {
+      "type": "string",
+      "description": "A detailed description of the task, including the what, why, and how."
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The due date for the task. If not provided, infer from context. Use ISO 8601 date format (YYYY-MM-DD)."
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["High", "Medium", "Low"],
+      "description": "The priority of the task based on the urgency and tone of the message."
+    },
+    "assignee": {
+      "type": "string",
+      "description": "The individual or team responsible for the task. If not mentioned, infer based on context or leave blank."
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "A list of tags or labels related to the task (e.g., Marketing, Urgent, Design, etc.)."
+    },
+    "subtasks": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "subtask_title": {
+            "type": "string",
+            "description": "The title or brief description of the subtask."
+          },
+          "subtask_description": {
+            "type": "string",
+            "description": "A detailed description of what needs to be done for this subtask."
+          }
+        },
+        "required": ["subtask_title"]
+      },
+      "description": "A list of subtasks that break down the main task into smaller, actionable steps."
+    }
+  },
+  "required": [
+    "task_title",
+    "task_description",
+    "priority"
+  ],
+  "additionalProperties": false
+}
