@@ -1,0 +1,33 @@
+{
+  "type": "object",
+  "properties": {
+    "task_title": {
+      "type": "string",
+      "description": "A concise title that summarizes the task."
+    },
+    "task_description": {
+      "type": "string",
+      "description": "A detailed description of the task based on the email body and context, including the what, why, and how."
+    },
+    "due_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "The due date for the task. If not provided, infer from context. Use ISO 8601 date format (YYYY-MM-DD)."
+    },
+    "priority": {
+      "type": "string",
+      "enum": ["High", "Medium", "Low"],
+      "description": "The priority of the task based on the urgency and tone of the message."
+    },
+    "assignee": {
+      "type": "string",
+      "description": "The individual or team responsible for the task. If not mentioned, infer based on context."
+    },
+  "required": [
+    "task_title",
+    "task_description",
+    "assignee",
+    "priority"
+  ],
+  "additionalProperties": false
+}
