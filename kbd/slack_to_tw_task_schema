@@ -9,6 +9,10 @@
       "type": "string",
       "description": "A detailed description of the task, including the what, why, and how."
     },
+    "client/company": {
+      "type": "string",
+      "description": "Name of the client/company that the task is referring to. Used for identifying which Teamwork Board the task should be placed"
+    },
     "due_date": {
       "type": "string",
       "format": "date-time",
