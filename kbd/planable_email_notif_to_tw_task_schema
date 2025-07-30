@@ -26,14 +26,13 @@
     "assignee": {
       "type": "string",
       "description": "The individual or team responsible for the task. If not mentioned, infer based on context."
-    },
+    }
+  },
   "required": [
     "task_title",
     "task_description",
     "client",
-    "assignee",
-    "priority"
+    "assignee"
   ],
   "additionalProperties": false
-  }
 }
