@@ -1,6 +1,10 @@
 {
   "type": "object",
   "properties": {
+    "is_task?": {
+      "type": "boolean",
+      "description": "A decision if email notification needs to be a Teamwork Task or Not"
+    },
     "task_title": {
       "type": "string",
       "description": "A concise title that summarizes the task."
