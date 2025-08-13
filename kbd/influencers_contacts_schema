@@ -4,7 +4,7 @@
     "timestamp": {
       "type": "string",
       "format": "date-time",
-      "description": "A timestamp indicating what time the message was received"
+      "description": "A timestamp indicating what time the message was received. Convert it to be easy to read by human"
     },
     "suggested_by": {
       "type": "string",
