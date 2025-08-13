@@ -14,6 +14,13 @@
       "type": "string",
       "description": "Which client/s was this influencer suggested to be part of. If unsure, leave blank"
     },
+    "social_media_links": {
+      "type": "array",
+      "description": "Enumerate the social media links of the influencer. It may be given already in the message, if not, search the web for their credible and verified social media links",
+      "items": {
+        "type": "string"
+      }
+    },
     "influencer_name": {
       "type": "string",
       "description": "Name of the influencer or celebrity that was suggested. If not explicit in the message, fetch the name of the influencer or the channel name from the link/s provided"
@@ -25,13 +32,6 @@
     "niche": {
       "type": "string",
       "description": "Provide the specific target market or niche that the influencer is famous for"
-    },
-    "social_media_links": {
-      "type": "array",
-      "description": "Enumerate the social media links of the influencer. It may be given already in the message, if not, search the web for their credible and verified social media links",
-      "items": {
-        "type": "string"
-      }
     },
     "is_good_fit": {
       "type": "boolean",
