@@ -1,0 +1,55 @@
+{
+  "type": "object",
+  "properties": {
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "A timestamp indicating what time the message was received"
+    },
+    "suggested_by": {
+      "type": "string",
+      "description": "The name or names of who suggested the influencer"
+    },
+    "for_client": {
+      "type": "string",
+      "description": "Which client/s was this influencer suggested to be part of. If unsure, leave blank"
+    },
+    "influencer_name": {
+      "type": "string",
+      "description": "Name of the influencer or celebrity that was suggested"
+    },
+    "influencer_description": {
+      "type": "string",
+      "description": "Conduct an online research and provide a short summary or description showcasing important aspects of the influencer's character (good and bad) that must be considered before partnering with"
+    },
+    "niche": {
+      "type": "string",
+      "description": "Provide the specific target market or niche that the influencer is famous for"
+    },
+    "social_media_links": {
+      "type": "array",
+      "description": "Enumerate the social media links of the influencer. It may be given already in the message, if not, search the web for their credible and verified social media links",
+      "items": {
+        "type": "string"
+      }
+    },
+    "is_good_fit": {
+      "type": "boolean",
+      "description": "Evaluate if the influencer is a good fit for the client. If client is empty, leave this blank."
+    },
+    "rationale": {
+      "type": "string",
+      "description": "Provide an informational rationale as to why it is a good fit or not"
+    }
+  },
+  "required": [
+    "timestamp",
+    "suggested_by",
+    "for_client",
+    "influencer_name",
+    "influencer_description",
+    "niche",
+    "social_media_links"
+  ],
+  "additionalProperties": false
+}
