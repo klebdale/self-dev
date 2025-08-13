@@ -16,7 +16,7 @@
     },
     "influencer_name": {
       "type": "string",
-      "description": "Name of the influencer or celebrity that was suggested"
+      "description": "Name of the influencer or celebrity that was suggested. If not explicit in the message, fetch the name of the influencer or the channel name from the link/s provided"
     },
     "influencer_description": {
       "type": "string",
