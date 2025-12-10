@@ -1,0 +1,29 @@
+[PATIENTS]
+PatientID,Name
+P1a2b3c4d,John Falle
+P2e3f4g5h,Maria Reyes
+P3i4j5k6l,Robert Jeon
+P4m5n6o7p,Sarah Alavanza
+P5q6r7s8t,Michael Canete
+
+[DOCTORS]
+DoctorID,Name,InClinic
+D9a8b7c6d,Dr. Roa Rodriguez,true
+D8e7f6g5h,Dr. James Harden,true
+D7i6j5k4l,Dr. Lisa Manoban,false
+D6m5n4o3p,Dr. David Goggins,true
+
+[ROOMS]
+RoomID,Type,IsOccupied
+R1x2y3z4w,Emergency Room,false
+R2v3u4t5s,Consultation Room A,false
+R3r4q5p6o,Consultation Room B,false
+R4n5m6l7k,Surgery Room,false
+
+[QUEUE]
+PatientID,Name,Concern,Priority,DoctorID
+P5q6r7s8t,Michael Brown,Severe Headache,1,D9a8b7c6d
+P3i4j5k6l,Robert Chen,Annual Checkup,4,D6m5n4o3p
+
+[HISTORY]
+"PatientID,DateTime,Doctor,Diagnosis,Treatment
